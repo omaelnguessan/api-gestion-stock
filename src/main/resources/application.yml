@@ -1,0 +1,18 @@
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:${env.DATABASE_PORT}/${env.DATABASE_NAME}?createDatabaseIfNotExist=true&userSSL=true&useUnicode=true&allowPublicKeyRetrieval=true&useSSL=false
+    username: ${env.DATABASE_USER}
+    password: ${env.DATABASE_PASSWORD}
+  ## Specify DBMS
+  jpa:
+    database: mysql
+    show-sql: false
+    # Hibernate DDL Auto (create, create-drop, update)
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQLDialect
+server:
+  port: ${env.APP_PORT}
