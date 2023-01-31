@@ -3,6 +3,7 @@ package com.omael.gestiondestock.model;
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.time.Instant;
 import java.util.List;
 
 @Data
@@ -20,10 +21,13 @@ public class User extends AbstractEntity {
     private String lastName;
 
     @Embedded
-    private Address adresse;
+    private Address address;
 
     @Column(name = "picture")
     private String picture;
+
+    @Column(name = "datebirth")
+    private Instant dateBirth;
 
     @Column(name = "email")
     private String email;

@@ -21,7 +21,7 @@ public class Customer extends AbstractEntity {
     private String lastName;
 
     @Embedded
-    private Address adresse;
+    private Address address;
 
     @Column(name = "picture")
     private String picture;
