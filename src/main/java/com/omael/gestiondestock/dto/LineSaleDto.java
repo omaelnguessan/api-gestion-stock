@@ -8,6 +8,9 @@ import java.math.BigDecimal;
 @Builder
 @Data
 public class LineSaleDto {
+
+    private Integer id;
+
     private SaleDto sale;
 
     private BigDecimal unitPrice;

@@ -10,6 +10,8 @@ import java.util.List;
 @Data
 public class OrderProviderDto {
 
+    private Integer id;
+
     private String code;
 
     private Instant dateOrder;

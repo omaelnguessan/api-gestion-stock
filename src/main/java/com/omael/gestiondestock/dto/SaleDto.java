@@ -8,6 +8,9 @@ import java.time.Instant;
 @Builder
 @Data
 public class SaleDto {
+
+    private Integer id;
+
     private String code;
 
     private Instant dateSale;

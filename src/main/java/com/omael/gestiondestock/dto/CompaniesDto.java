@@ -8,6 +8,9 @@ import java.util.List;
 @Data
 @Builder
 public class CompaniesDto {
+
+    private Integer id;
+
     private String name;
 
     private String description;

@@ -9,6 +9,8 @@ import java.util.List;
 @Data
 public class ProviderDto {
 
+    private Integer id;
+
     private String firstName;
 
     private String lastName;

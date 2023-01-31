@@ -9,6 +9,9 @@ import java.math.BigDecimal;
 @Builder
 @Data
 public class LineOrderProviderDto {
+
+    private Integer id;
+
     private ArticleDto article;
 
     private OrderProviderDto orderProvider;

@@ -8,6 +8,9 @@ import java.math.BigDecimal;
 @Builder
 @Data
 public class LineOrderCustomerDto {
+
+    private Integer id;
+
     private ArticleDto article;
 
     private OrderCustomerDto orderCustomer;
