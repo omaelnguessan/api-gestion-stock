@@ -1,21 +1,49 @@
 package com.omael.gestiondestock.dto;
 
+import com.omael.gestiondestock.model.Customer;
+import com.omael.gestiondestock.model.OrderCustomer;
+
 import lombok.Builder;
 import lombok.Data;
 
-import java.math.BigDecimal;
+import java.time.Instant;
+import java.util.List;
 
 @Builder
 @Data
 public class OrderCustomerDto {
-
     private Integer id;
 
-    private ArticleDto article;
+    private String code;
 
-    private OrderCustomerDto orderCustomer;
+    private Instant dateOrder;
 
-    private BigDecimal quantity;
+    private Customer customer;
 
-    private BigDecimal unitPrice;
+    private List<LineOrderCustomerDto> lineOrderCustomers;
+
+    public static OrderCustomerDto fromEntity(OrderCustomer orderCustomer) {
+        if (orderCustomer == null) {
+            //TODO throw an exception
+            return null;
+        }
+
+        return OrderCustomerDto.builder()
+                .id(orderCustomer.getId())
+                .code(orderCustomer.getCode())
+                .dateOrder(orderCustomer.getDateOrder())
+                .build();
+    }
+
+    public static OrderCustomer toEntity(OrderCustomerDto orderCustomerDto) {
+        if (orderCustomerDto == null) {
+            //TODO throw an exception
+            return null;
+        }
+
+        OrderCustomer orderCustomer = new OrderCustomer();
+        orderCustomer.setCode(orderCustomer.getCode());
+        orderCustomer.setDateOrder(orderCustomer.getDateOrder());
+        return orderCustomer;
+    }
 }

@@ -1,5 +1,6 @@
 package com.omael.gestiondestock.dto;
 
+import com.omael.gestiondestock.model.MvtStk;
 import com.omael.gestiondestock.model.TypeMvtStk;
 import lombok.Builder;
 import lombok.Data;
@@ -20,4 +21,29 @@ public class MvtStkDto {
     private ArticleDto article;
 
     private TypeMvtStk typeMvt;
+
+    public static MvtStkDto fromEntity(MvtStk mvtStk) {
+        if (mvtStk == null) {
+            //TODO throw an exception
+            return null;
+        }
+
+        return MvtStkDto.builder()
+                .id(mvtStk.getId())
+                .dateMvt(mvtStk.getDateMvt())
+                .quantity(mvtStk.getQuantity())
+                .build();
+    }
+
+    public static MvtStk toEntity(MvtStkDto mvtStkDto) {
+        if (mvtStkDto == null) {
+            //TODO throw an exception
+            return null;
+        }
+
+        MvtStk mvtStk = new MvtStk();
+        mvtStk.setDateMvt(mvtStkDto.getDateMvt());
+        mvtStk.setQuantity(mvtStkDto.getQuantity());
+        return mvtStk;
+    }
 }

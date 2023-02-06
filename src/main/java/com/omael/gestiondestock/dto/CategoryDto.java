@@ -18,7 +18,7 @@ public class CategoryDto {
 
     private List<ArticleDto> articles;
 
-    public CategoryDto fromEntity(Category category) {
+    public static CategoryDto fromEntity(Category category) {
         if (category == null) {
             //TODO throw an exception
             return null;
@@ -30,14 +30,16 @@ public class CategoryDto {
                 .build();
     }
 
-    public Category toEntity(CategoryDto categoryDto) {
+    public static Category toEntity(CategoryDto categoryDto) {
         if (categoryDto == null) {
             //TODO throw an exception
             return null;
         }
-        return Category.builder()
-                .codeCategory(categoryDto.codeCategory)
-                .designation(categoryDto.designation)
-                .build();
+
+        Category category = new Category();
+        category.setId(categoryDto.getId());
+        category.setCodeCategory(categoryDto.getCodeCategory());
+        category.setDesignation(categoryDto.getDesignation());
+        return category;
     }
 }
