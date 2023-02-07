@@ -1,6 +1,5 @@
 package com.omael.gestiondestock.dto;
 
-import ch.qos.logback.core.net.server.Client;
 import com.omael.gestiondestock.model.Customer;
 import lombok.Builder;
 import lombok.Data;

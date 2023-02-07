@@ -1,6 +1,5 @@
 package com.omael.gestiondestock.dto;
 
-import com.omael.gestiondestock.model.Article;
 import com.omael.gestiondestock.model.LineOrderCustomer;
 import lombok.Builder;
 import lombok.Data;
