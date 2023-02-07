@@ -23,4 +23,7 @@ public class Sale extends AbstractEntity {
 
     @Column(name = "remark")
     private String remark;
+
+    @Column(name = "idCompanies")
+    private Integer idCompanies;
 }

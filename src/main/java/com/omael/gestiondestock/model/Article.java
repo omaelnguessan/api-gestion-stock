@@ -31,6 +31,9 @@ public class Article extends AbstractEntity {
     @Column(name = "picture")
     private String picture;
 
+    @Column(name = "idCompanies")
+    private Integer idCompanies;
+
 
     @ManyToOne
     @JoinColumn(name = "idcategory")

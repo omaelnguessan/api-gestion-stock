@@ -23,4 +23,7 @@ public class LineSale extends AbstractEntity {
     @Column(name = "quantity")
     private BigDecimal quantity;
 
+    @Column(name = "idCompanies")
+    private Integer idCompanies;
+
 }

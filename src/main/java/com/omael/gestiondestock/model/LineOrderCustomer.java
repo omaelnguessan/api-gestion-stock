@@ -24,6 +24,9 @@ public class LineOrderCustomer extends AbstractEntity {
     @Column(name = "quantity")
     private BigDecimal quantity;
 
+    @Column(name = "idCompanies")
+    private Integer idCompanies;
+
     @Column(name = "unitprice")
     private BigDecimal unitPrice;
 }

@@ -19,6 +19,9 @@ public class Customer extends AbstractEntity {
     @Column(name = "lastname")
     private String lastName;
 
+    @Column(name = "idCompanies")
+    private Integer idCompanies;
+    
     @Embedded
     private Address address;
 

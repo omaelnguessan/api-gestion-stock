@@ -30,6 +30,9 @@ public class Provider extends AbstractEntity{
     @Column(name = "phone")
     private String phone;
 
+    @Column(name = "idCompanies")
+    private Integer idCompanies;
+
     @OneToMany(mappedBy = "provider")
     private List<OrderProvider> orderProviders;
 }

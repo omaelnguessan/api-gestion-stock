@@ -26,4 +26,7 @@ public class LineOrderProvider extends AbstractEntity {
 
     @Column(name = "unitprice")
     private BigDecimal unitPrice;
+
+    @Column(name = "idCompanies")
+    private Integer idCompanies;
 }
