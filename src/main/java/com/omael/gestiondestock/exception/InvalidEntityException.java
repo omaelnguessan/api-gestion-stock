@@ -11,7 +11,7 @@ public class InvalidEntityException extends RuntimeException {
     @Getter
     private List<String> errors;
 
-    public InvalidEntityException(String message) {
+    public InvalidEntityException(String message, ErrorCodes articleNotValid) {
         super(message);
     }
 
