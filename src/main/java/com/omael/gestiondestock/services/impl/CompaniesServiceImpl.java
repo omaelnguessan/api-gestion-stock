@@ -33,7 +33,7 @@ public class CompaniesServiceImpl implements CompaniesService {
 
         if (!errors.isEmpty()) {
             log.error("Companies is not valid {}", companiesDto);
-            throw new InvalidEntityException("Erreur lors de la validation de la compagnie", ErrorCodes.CATEGORY_NOT_VALID);
+            throw new InvalidEntityException("Erreur lors de la validation de la compagnie", ErrorCodes.COMPANIES_NOT_VALID);
         }
 
         return CompaniesDto.fromEntity(

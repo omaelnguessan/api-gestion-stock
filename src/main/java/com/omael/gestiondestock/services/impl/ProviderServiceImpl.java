@@ -65,6 +65,10 @@ public class ProviderServiceImpl implements ProviderService {
 
     @Override
     public void delete(Integer providerId) {
+        if (providerId == null) {
+            log.error("Provider ID not is empty");
+            return;
+        }
         this.providerRepository.deleteById(providerId);
     }
 }
