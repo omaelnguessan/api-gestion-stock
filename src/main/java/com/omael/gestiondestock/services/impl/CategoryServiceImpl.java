@@ -38,7 +38,7 @@ public class CategoryServiceImpl implements CategoryService {
         }
 
         return CategoryDto.fromEntity(
-                categoryRepository.save(
+                this.categoryRepository.save(
                         CategoryDto.toEntity(categoryDto)
                 )
         );
@@ -51,7 +51,7 @@ public class CategoryServiceImpl implements CategoryService {
             return null;
         }
 
-        Optional<Category> category = categoryRepository.findById(categoryId);
+        Optional<Category> category = this.categoryRepository.findById(categoryId);
 
         return Optional.of(CategoryDto.fromEntity(category.get())).orElseThrow(() -> new EntityNotFoundException("Error category with ID "+categoryId+" not found", ErrorCodes.CATEGORY_NOT_FOUND));
     }
@@ -63,14 +63,14 @@ public class CategoryServiceImpl implements CategoryService {
             return null;
         }
 
-        Optional<Category> category = categoryRepository.findCategoriesByCodeCategory(codeCategory);
+        Optional<Category> category = this.categoryRepository.findCategoriesByCodeCategory(codeCategory);
 
         return Optional.of(CategoryDto.fromEntity(category.get())).orElseThrow(() -> new EntityNotFoundException("Error category with CODE "+codeCategory+" not found", ErrorCodes.CATEGORY_NOT_FOUND));
     }
 
     @Override
     public List<CategoryDto> findAll() {
-        return categoryRepository.findAll()
+        return this.categoryRepository.findAll()
                 .stream()
                 .map(CategoryDto::fromEntity)
                 .collect(Collectors.toList());
@@ -83,6 +83,6 @@ public class CategoryServiceImpl implements CategoryService {
             return;
         }
 
-        categoryRepository.deleteById(categoryId);
+        this.categoryRepository.deleteById(categoryId);
     }
 }

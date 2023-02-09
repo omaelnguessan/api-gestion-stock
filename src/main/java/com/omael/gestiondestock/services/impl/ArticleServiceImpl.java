@@ -38,7 +38,7 @@ public class ArticleServiceImpl implements ArticleService {
         }
 
         return ArticleDto.fromEntity(
-                articleRepository.save(
+                this.articleRepository.save(
                         ArticleDto.toEntity(articleDto)
                 )
         );
@@ -50,7 +50,7 @@ public class ArticleServiceImpl implements ArticleService {
             log.error("Article ID is null");
             return null;
         }
-        Optional<Article> article = articleRepository.findById(articleId);
+        Optional<Article> article = this.articleRepository.findById(articleId);
 
         return Optional.of(ArticleDto.fromEntity(article.get())).orElseThrow(() -> new EntityNotFoundException("Article not found with ID  "+articleId, ErrorCodes.ARTICLE_NOT_FOUND));
     }
@@ -61,14 +61,14 @@ public class ArticleServiceImpl implements ArticleService {
             log.error("Article CODE is null");
             return null;
         }
-        Optional<Article> article = articleRepository.findArticleByCodeArticle(codeArticle);
+        Optional<Article> article = this.articleRepository.findArticleByCodeArticle(codeArticle);
 
         return Optional.of(ArticleDto.fromEntity(article.get())).orElseThrow(() -> new EntityNotFoundException("Article not found with CODE  "+codeArticle, ErrorCodes.ARTICLE_NOT_FOUND));
     }
 
     @Override
     public List<ArticleDto> findAll() {
-        return articleRepository.findAll()
+        return this.articleRepository.findAll()
                 .stream().map(ArticleDto::fromEntity)
                 .collect(Collectors.toList());
     }
@@ -79,6 +79,6 @@ public class ArticleServiceImpl implements ArticleService {
             log.error("Article ID is null");
             return;
         }
-        articleRepository.deleteById(articleId);
+        this.articleRepository.deleteById(articleId);
     }
 }
