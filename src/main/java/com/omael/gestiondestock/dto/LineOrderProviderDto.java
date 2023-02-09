@@ -1,5 +1,6 @@
 package com.omael.gestiondestock.dto;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.omael.gestiondestock.model.LineOrderCustomer;
 import com.omael.gestiondestock.model.LineOrderProvider;
 import lombok.Builder;
@@ -16,6 +17,7 @@ public class LineOrderProviderDto {
 
     private ArticleDto article;
 
+    @JsonIgnore
     private OrderProviderDto orderProvider;
 
     private BigDecimal quantity;
