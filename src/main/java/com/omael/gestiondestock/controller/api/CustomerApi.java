@@ -19,6 +19,6 @@ public interface CustomerApi {
     @GetMapping(value = APP_ROOT + "/customers/all", produces = MediaType.APPLICATION_JSON_VALUE)
     List<CustomerDto> findAll();
 
-    @DeleteMapping(value = APP_ROOT + "/customer/delete/{customerId}")
+    @DeleteMapping(value = APP_ROOT + "/customers/delete/{customerId}")
     void delete(@PathVariable("customerId") Integer customerId);
 }
