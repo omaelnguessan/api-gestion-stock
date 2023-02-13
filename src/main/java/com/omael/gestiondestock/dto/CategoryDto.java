@@ -1,5 +1,6 @@
 package com.omael.gestiondestock.dto;
 
+import com.omael.gestiondestock.model.Article;
 import com.omael.gestiondestock.model.Category;
 import lombok.Builder;
 import lombok.Data;
@@ -16,6 +17,8 @@ public class CategoryDto {
 
     private String designation;
 
+    private Integer idCompanies;
+
     private List<ArticleDto> articles;
 
     public static CategoryDto fromEntity(Category category) {
@@ -27,6 +30,7 @@ public class CategoryDto {
         return CategoryDto.builder().id(category.getId())
                 .codeCategory(category.getCodeCategory())
                 .designation(category.getDesignation())
+                .idCompanies(category.getIdCompanies())
                 .build();
     }
 
@@ -40,6 +44,7 @@ public class CategoryDto {
         category.setId(categoryDto.getId());
         category.setCodeCategory(categoryDto.getCodeCategory());
         category.setDesignation(categoryDto.getDesignation());
+        category.setIdCompanies(category.getIdCompanies());
         return category;
     }
 }

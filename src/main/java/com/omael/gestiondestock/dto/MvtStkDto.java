@@ -22,6 +22,8 @@ public class MvtStkDto {
 
     private TypeMvtStk typeMvt;
 
+    private Integer idCompanies;
+
     public static MvtStkDto fromEntity(MvtStk mvtStk) {
         if (mvtStk == null) {
             //TODO throw an exception
@@ -32,6 +34,7 @@ public class MvtStkDto {
                 .id(mvtStk.getId())
                 .dateMvt(mvtStk.getDateMvt())
                 .quantity(mvtStk.getQuantity())
+                .idCompanies(mvtStk.getIdCompanies())
                 .build();
     }
 
@@ -44,6 +47,7 @@ public class MvtStkDto {
         MvtStk mvtStk = new MvtStk();
         mvtStk.setDateMvt(mvtStkDto.getDateMvt());
         mvtStk.setQuantity(mvtStkDto.getQuantity());
+        mvtStk.setIdCompanies(mvtStkDto.getIdCompanies());
         return mvtStk;
     }
 }

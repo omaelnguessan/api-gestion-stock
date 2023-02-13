@@ -24,6 +24,8 @@ public class LineOrderProviderDto {
 
     private BigDecimal unitPrice;
 
+    private Integer idCompanies;
+
 
     public static LineOrderProviderDto fromEntity(LineOrderCustomer lineOrderCustomer) {
         if (lineOrderCustomer == null) {
@@ -35,6 +37,7 @@ public class LineOrderProviderDto {
                 .id(lineOrderCustomer.getId())
                 .quantity(lineOrderCustomer.getQuantity())
                 .unitPrice(lineOrderCustomer.getUnitPrice())
+                .idCompanies(lineOrderCustomer.getIdCompanies())
                 .build();
 
     }
@@ -48,6 +51,7 @@ public class LineOrderProviderDto {
         LineOrderProvider lineOrderProvider = new LineOrderProvider();
         lineOrderProvider.setQuantity(lineOrderProviderDto.getQuantity());
         lineOrderProvider.setUnitPrice(lineOrderProviderDto.getUnitPrice());
+        lineOrderProvider.setIdCompanies(lineOrderProviderDto.getIdCompanies());
         return lineOrderProvider;
     }
 }

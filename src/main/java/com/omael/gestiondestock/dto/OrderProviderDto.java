@@ -19,6 +19,8 @@ public class OrderProviderDto {
 
     private ProviderDto provider;
 
+    private Integer idCompanies;
+
     private List<LineOrderProviderDto> lineOrderProviders;
 
     public static OrderProviderDto fromEntity(OrderProvider orderProvider) {
@@ -31,6 +33,7 @@ public class OrderProviderDto {
                 .id(orderProvider.getId())
                 .code(orderProvider.getCode())
                 .dateOrder(orderProvider.getDateOrder())
+                .idCompanies(orderProvider.getIdCompanies())
                 .build();
     }
 
@@ -42,6 +45,7 @@ public class OrderProviderDto {
        OrderProvider orderProvider = new OrderProvider();
        orderProvider.setCode(orderProvider.getCode());
        orderProvider.setDateOrder(orderProviderDto.getDateOrder());
+       orderProvider.setIdCompanies(orderProviderDto.getIdCompanies());
        return orderProvider;
    }
 }

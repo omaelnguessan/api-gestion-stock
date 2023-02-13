@@ -24,6 +24,8 @@ public class CustomerDto {
 
     private String phone;
 
+    private Integer idCompanies;
+
     private List<OrderCustomerDto> orderCustomers;
 
     public static CustomerDto fromEntity(Customer customer) {
@@ -39,6 +41,7 @@ public class CustomerDto {
                 .phone(customer.getPhone())
                 .email(customer.getEmail())
                 .picture(customer.getPicture())
+                .idCompanies(customer.getIdCompanies())
                 .build();
     }
 
@@ -54,6 +57,7 @@ public class CustomerDto {
         customer.setPhone(customerDto.getPhone());
         customer.setEmail(customerDto.getEmail());
         customer.setPicture(customerDto.getPicture());
+        customer.setIdCompanies(customerDto.getIdCompanies());
         return customer;
     }
 

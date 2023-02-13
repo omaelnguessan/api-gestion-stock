@@ -22,6 +22,8 @@ public class LineOrderCustomerDto {
 
     private BigDecimal unitPrice;
 
+    private Integer idCompanies;
+
     public static LineOrderCustomerDto fromEntity(LineOrderCustomer lineOrderCustomer) {
         if (lineOrderCustomer == null) {
             //TODO throw an exception
@@ -32,6 +34,7 @@ public class LineOrderCustomerDto {
                 .id(lineOrderCustomer.getId())
                 .quantity(lineOrderCustomer.getQuantity())
                 .unitPrice(lineOrderCustomer.getUnitPrice())
+                .idCompanies(lineOrderCustomer.getIdCompanies())
                 .build();
     }
 
@@ -44,6 +47,7 @@ public class LineOrderCustomerDto {
         LineOrderCustomer lineOrderCustomer = new LineOrderCustomer();
         lineOrderCustomer.setQuantity(lineOrderCustomerDto.getQuantity());
         lineOrderCustomer.setUnitPrice(lineOrderCustomerDto.getUnitPrice());
+        lineOrderCustomer.setIdCompanies(lineOrderCustomerDto.getIdCompanies());
         return lineOrderCustomer;
     }
 }

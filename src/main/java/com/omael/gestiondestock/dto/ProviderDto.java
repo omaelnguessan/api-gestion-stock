@@ -24,6 +24,8 @@ public class ProviderDto {
 
     private String phone;
 
+    private Integer idCompanies;
+
     private List<OrderProviderDto> orderProviders;
 
     public static ProviderDto fromEntity(Provider provider) {
@@ -39,6 +41,7 @@ public class ProviderDto {
                 .picture(provider.getPicture())
                 .email(provider.getEmail())
                 .phone(provider.getPhone())
+                .idCompanies(provider.getIdCompanies())
                 .build();
     }
 
@@ -54,6 +57,7 @@ public class ProviderDto {
         provider.setEmail(providerDto.getEmail());
         provider.setPhone(providerDto.getPhone());
         provider.setPicture(providerDto.getPicture());
+        provider.setIdCompanies(providerDto.getIdCompanies());
         return provider;
     }
 }

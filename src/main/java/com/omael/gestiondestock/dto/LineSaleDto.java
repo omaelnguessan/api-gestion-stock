@@ -18,6 +18,8 @@ public class LineSaleDto {
 
     private BigDecimal quantity;
 
+    private Integer idCompanies;
+
     public static LineSaleDto fromEntity(LineSale lineSale) {
         if (lineSale == null) {
             //TODO throw an exception
@@ -28,6 +30,7 @@ public class LineSaleDto {
                 .id(lineSale.getId())
                 .unitPrice(lineSale.getUnitPrice())
                 .quantity(lineSale.getQuantity())
+                .idCompanies(lineSale.getIdCompanies())
                 .build();
     }
 
@@ -39,7 +42,8 @@ public class LineSaleDto {
 
         LineSale lineSale = new LineSale();
         lineSale.setQuantity(lineSaleDto.getQuantity());
-        lineSale.setUnitPrice(lineSale.getUnitPrice());
+        lineSale.setUnitPrice(lineSaleDto.getUnitPrice());
+        lineSale.setIdCompanies(lineSaleDto.getIdCompanies());
         return lineSale;
     }
 }

@@ -45,6 +45,7 @@ public class UserDto {
                 .email(user.getEmail())
                 .password(user.getPassword())
                 .picture(user.getPicture())
+                .companies(CompaniesDto.fromEntity(user.getCompanies()))
                 .build();
     }
 
@@ -60,7 +61,8 @@ public class UserDto {
         user.setEmail(userDto.getEmail());
         user.setPassword(userDto.getPassword());
         user.setDateBirth(userDto.getDateBirth());
-        user.setPicture(user.getPicture());
+        user.setPicture(userDto.getPicture());
+        user.setCompanies(CompaniesDto.toEntity(userDto.getCompanies()) );
         return user;
     }
 }

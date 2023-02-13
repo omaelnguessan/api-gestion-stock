@@ -24,6 +24,8 @@ public class ArticleDto {
 
     private String picture;
 
+    private Integer idCompanies;
+
     private CategoryDto category;
 
     public static ArticleDto fromEntity (Article article) {
@@ -40,6 +42,8 @@ public class ArticleDto {
                 .unitPriceTTC(article.getUnitPriceTTC())
                 .rateVat(article.getRateVat())
                 .picture(article.getPicture())
+                .idCompanies(article.getIdCompanies())
+                .category(CategoryDto.fromEntity(article.getCategory()))
                 .build();
     }
 
@@ -57,6 +61,8 @@ public class ArticleDto {
         article.setUnitPriceTTC(articleDto.getUnitPriceTTC());
         article.setRateVat(articleDto.getRateVat());
         article.setPicture(articleDto.getPicture());
+        article.setIdCompanies(article.getIdCompanies());
+        article.setCategory(CategoryDto.toEntity(articleDto.getCategory()));
         return article;
     }
 

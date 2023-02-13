@@ -20,6 +20,8 @@ public class OrderCustomerDto {
 
     private Customer customer;
 
+    private Integer idCompanies;
+
     private List<LineOrderCustomerDto> lineOrderCustomers;
 
     public static OrderCustomerDto fromEntity(OrderCustomer orderCustomer) {
@@ -32,6 +34,7 @@ public class OrderCustomerDto {
                 .id(orderCustomer.getId())
                 .code(orderCustomer.getCode())
                 .dateOrder(orderCustomer.getDateOrder())
+                .idCompanies(orderCustomer.getIdCompanies())
                 .build();
     }
 
@@ -44,6 +47,7 @@ public class OrderCustomerDto {
         OrderCustomer orderCustomer = new OrderCustomer();
         orderCustomer.setCode(orderCustomer.getCode());
         orderCustomer.setDateOrder(orderCustomer.getDateOrder());
+        orderCustomer.setIdCompanies(orderCustomerDto.getIdCompanies());
         return orderCustomer;
     }
 }
