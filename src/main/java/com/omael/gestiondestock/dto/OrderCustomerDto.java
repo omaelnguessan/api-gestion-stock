@@ -18,7 +18,7 @@ public class OrderCustomerDto {
 
     private Instant dateOrder;
 
-    private Customer customer;
+    private CustomerDto customer;
 
     private Integer idCompanies;
 
@@ -35,6 +35,7 @@ public class OrderCustomerDto {
                 .code(orderCustomer.getCode())
                 .dateOrder(orderCustomer.getDateOrder())
                 .idCompanies(orderCustomer.getIdCompanies())
+                .customer(CustomerDto.fromEntity(orderCustomer.getCustomer()))
                 .build();
     }
 

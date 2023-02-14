@@ -42,6 +42,7 @@ public class ProviderDto {
                 .email(provider.getEmail())
                 .phone(provider.getPhone())
                 .idCompanies(provider.getIdCompanies())
+                .address(AddressDto.fromEntity(provider.getAddress()))
                 .build();
     }
 

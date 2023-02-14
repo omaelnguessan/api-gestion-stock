@@ -46,6 +46,7 @@ public class UserDto {
                 .password(user.getPassword())
                 .picture(user.getPicture())
                 .companies(CompaniesDto.fromEntity(user.getCompanies()))
+                .address(AddressDto.fromEntity(user.getAddress()))
                 .build();
     }
 

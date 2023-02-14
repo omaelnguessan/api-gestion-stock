@@ -23,6 +23,7 @@ public class RolesDto {
         return RolesDto.builder()
                 .id(roles.getId())
                 .roleName(roles.getRoleName())
+                .user(UserDto.fromEntity(roles.getUser()))
                 .build();
     }
 

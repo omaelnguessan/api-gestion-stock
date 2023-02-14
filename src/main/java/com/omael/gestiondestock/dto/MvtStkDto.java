@@ -35,6 +35,7 @@ public class MvtStkDto {
                 .dateMvt(mvtStk.getDateMvt())
                 .quantity(mvtStk.getQuantity())
                 .idCompanies(mvtStk.getIdCompanies())
+                .article(ArticleDto.fromEntity(mvtStk.getArticle()))
                 .build();
     }
 

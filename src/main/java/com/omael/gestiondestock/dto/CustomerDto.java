@@ -42,6 +42,7 @@ public class CustomerDto {
                 .email(customer.getEmail())
                 .picture(customer.getPicture())
                 .idCompanies(customer.getIdCompanies())
+                .address(AddressDto.fromEntity(customer.getAddress()))
                 .build();
     }
 

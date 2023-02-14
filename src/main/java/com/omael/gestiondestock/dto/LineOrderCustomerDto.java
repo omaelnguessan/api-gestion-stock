@@ -35,6 +35,7 @@ public class LineOrderCustomerDto {
                 .quantity(lineOrderCustomer.getQuantity())
                 .unitPrice(lineOrderCustomer.getUnitPrice())
                 .idCompanies(lineOrderCustomer.getIdCompanies())
+                .orderCustomer(OrderCustomerDto.fromEntity(lineOrderCustomer.getOrderCustomer()))
                 .build();
     }
 

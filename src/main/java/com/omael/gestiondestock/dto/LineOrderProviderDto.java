@@ -1,7 +1,7 @@
 package com.omael.gestiondestock.dto;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.omael.gestiondestock.model.LineOrderCustomer;
+import com.omael.gestiondestock.model.LineOrderProvider;
 import com.omael.gestiondestock.model.LineOrderProvider;
 import lombok.Builder;
 import lombok.Data;
@@ -27,17 +27,18 @@ public class LineOrderProviderDto {
     private Integer idCompanies;
 
 
-    public static LineOrderProviderDto fromEntity(LineOrderCustomer lineOrderCustomer) {
-        if (lineOrderCustomer == null) {
+    public static LineOrderProviderDto fromEntity(LineOrderProvider lineOrderProvider) {
+        if (lineOrderProvider == null) {
             //TODO throw an exception
             return null;
         }
 
         return LineOrderProviderDto.builder()
-                .id(lineOrderCustomer.getId())
-                .quantity(lineOrderCustomer.getQuantity())
-                .unitPrice(lineOrderCustomer.getUnitPrice())
-                .idCompanies(lineOrderCustomer.getIdCompanies())
+                .id(lineOrderProvider.getId())
+                .quantity(lineOrderProvider.getQuantity())
+                .unitPrice(lineOrderProvider.getUnitPrice())
+                .idCompanies(lineOrderProvider.getIdCompanies())
+                .orderProvider(OrderProviderDto.fromEntity(lineOrderProvider.getOrderProvider()))
                 .build();
 
     }

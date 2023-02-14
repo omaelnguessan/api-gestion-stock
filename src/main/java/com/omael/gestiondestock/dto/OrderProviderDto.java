@@ -34,6 +34,7 @@ public class OrderProviderDto {
                 .code(orderProvider.getCode())
                 .dateOrder(orderProvider.getDateOrder())
                 .idCompanies(orderProvider.getIdCompanies())
+                .provider(ProviderDto.fromEntity(orderProvider.getProvider()))
                 .build();
     }
 

@@ -45,6 +45,7 @@ public class CompaniesDto {
                 .email(companies.getEmail())
                 .taxCode(companies.getTaxCode())
                 .webSite(companies.getWebSite())
+                .address(AddressDto.fromEntity(companies.getAddress()))
                 .build();
     }
 

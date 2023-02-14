@@ -31,6 +31,7 @@ public class LineSaleDto {
                 .unitPrice(lineSale.getUnitPrice())
                 .quantity(lineSale.getQuantity())
                 .idCompanies(lineSale.getIdCompanies())
+                .sale(SaleDto.fromEntity(lineSale.getSale()))
                 .build();
     }
 
