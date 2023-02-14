@@ -1,10 +1,10 @@
-package com.omael.gestiondestock.services;
+package com.omael.gestiondestock.controller.api;
 
 import com.omael.gestiondestock.dto.OrderProviderDto;
 
 import java.util.List;
 
-public interface OrderProviderService {
+public interface OrderProviderApi {
 
     OrderProviderDto save(OrderProviderDto orderProviderDto);
 
