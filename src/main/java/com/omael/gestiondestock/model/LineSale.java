@@ -17,6 +17,10 @@ public class LineSale extends AbstractEntity {
     @JoinColumn(name = "idsale")
     private Sale sale;
 
+    @ManyToOne
+    @JoinColumn(name = "idarticle")
+    private Article article;
+
     @Column(name = "unitprice")
     private BigDecimal unitPrice;
 
@@ -25,5 +29,6 @@ public class LineSale extends AbstractEntity {
 
     @Column(name = "idCompanies")
     private Integer idCompanies;
+
 
 }

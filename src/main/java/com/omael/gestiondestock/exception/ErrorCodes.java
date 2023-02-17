@@ -22,7 +22,8 @@ public enum ErrorCodes {
     MVT_STK_NOT_FOUND(11000),
     USER_NOT_FOUND(12000),
     USER_NOT_VALID(12001),
-    SALE_NOT_FOUND(13000);
+    SALE_NOT_FOUND(13000),
+    SALE_NOT_VALID(13001);
 
 
     private int code;

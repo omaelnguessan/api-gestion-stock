@@ -22,7 +22,7 @@ public class SaleDto {
 
     private Integer idCompanies;
 
-    private List<LineSale> lineSales;
+    private List<LineSaleDto> lineSales;
 
     public static SaleDto fromEntity(Sale sale) {
         if (sale == null) {

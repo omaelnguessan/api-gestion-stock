@@ -14,6 +14,8 @@ public class LineSaleDto {
 
     private SaleDto sale;
 
+    private ArticleDto article;
+
     private BigDecimal unitPrice;
 
     private BigDecimal quantity;
@@ -32,6 +34,7 @@ public class LineSaleDto {
                 .quantity(lineSale.getQuantity())
                 .idCompanies(lineSale.getIdCompanies())
                 .sale(SaleDto.fromEntity(lineSale.getSale()))
+                .article(ArticleDto.fromEntity(lineSale.getArticle()))
                 .build();
     }
 
